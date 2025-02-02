@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Privata</title>
+    <link rel="stylesheet" href="/css/personal_area.css">
+</head>
+<body>
+    <!-- Barra di navigazione -->
+    <div class="navbar">
+        <div class="logo">Gestione Aste</div>
+        <div class="links">
+            <a href="auctions.html">Aste</a>
+            <a href="bids.html">Offerte</a>
+            <a href="login.html">Login/Registrati</a>
+        </div>
+    </div>
+    <div class="container">
+        <div id="messageBox" style="display: none; padding: 10px; margin: 20px 0; border-radius: 4px;"></div>
+        <h2>Benvenuto nell'Area Privata</h2>
+        <p>Crea e gestisci le tue aste in tutta semplicità!</p>
+
+        <!-- Informazioni personali -->
+        <h3>Le tue Informazioni</h3>
+        <div id="userInfo" class="user-info">
+            <p>Caricamento delle informazioni...</p>
+        </div>
+        
+        <!-- Le aste dell'utente -->
+        <h3>Le tue Aste</h3>
+        <div id="myAuctions" class="auction-list">
+            <!-- Qui verranno visualizzate le aste dell'utente -->
+        </div>
+
+        <!-- Le aste vinte -->
+        <h3>Le tue Aste Vinte o In corso</h3>
+        <div id="wonAuctions" class="auction-list">
+            <p>Caricamento delle aste vinte...</p>
+        </div>
+
+        <div class="forms-container">
+            <!-- Form per creare una nuova asta -->
+            <div class="form-block">
+                <h3>Crea una Nuova Asta</h3>
+                <form id="createAuctionForm">
+                    <label for="titolo">Titolo:</label>
+                    <input type="text" id="titolo" name="titolo" required>
+                    
+                    <label for="descrizione">Descrizione:</label>
+                    <textarea id="descrizione" name="descrizione" required></textarea>
+                    
+                    <label for="scadenza">Data di Scadenza:</label>
+                    <input type="date" id="scadenza" name="scadenza" required>
+                    
+                    <label for="offerta">Offerta di Partenza:</label>
+                    <input type="number" id="offerta" name="offerta" required>
+                    
+                    <button type="submit">Crea Asta</button>
+                </form>
+            </div>
+
+            <!-- Form per modificare un'asta -->
+            <div class="form-block">
+                <h3>Modifica un'Asta</h3>
+                <form id="updateAuctionForm">
+                    <label for="updateAuctionId">ID Asta:</label>
+                    <input type="number" id="updateAuctionId" name="id" required>
+
+                    <label for="updateTitolo">Nuovo Titolo:</label>
+                    <input type="text" id="updateTitolo" name="titolo" required>
+
+                    <label for="updateDescrizione">Nuova Descrizione:</label>
+                    <textarea id="updateDescrizione" name="descrizione" required></textarea>
+
+                    <button type="submit">Modifica Asta</button>
+                </form>
+            </div>
+
+            <!-- Form per eliminare un'asta -->
+            <div class="form-block">
+                <h3>Elimina un'Asta</h3>
+                <form id="deleteAuctionForm">
+                    <label for="deleteAuctionId">ID Asta:</label>
+                    <input type="number" id="deleteAuctionId" name="id" required>
+                    <button type="submit">Elimina Asta</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Pop-up personalizzato -->
+        <div id="popup">
+            <p id="popupMessage"></p>
+            <button onclick="closePopup()">Chiudi</button>
+        </div>
+    </div>
+    <script src="/js/personal_area.js"></script>
+</body>
+</html>

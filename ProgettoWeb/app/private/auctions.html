@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Utenti e Aste</title>
+    <link rel="stylesheet" href="/css/auctions.css">
+</head>
+<body>
+    <!-- Barra di navigazione -->
+    <div class="navbar">
+        <div class="brand">Gestione Utenti e Aste</div>
+        <div>
+            <a href="bids.html">Offerte</a>
+            <a href="personal_area.html">Area personale</a>
+            <a href="login.html">Login/Registrati</a>
+        </div>
+    </div>
+
+    <!-- Contenitore principale -->
+    <div class="container">
+        <h1>Gestione Utenti e Aste</h1>
+
+        <!-- Form per visualizzare i dettagli di uno specifico utente -->
+        <div class="form-section">
+            <label for="userId">Visualizza dettagli utente (ID):</label>
+            <input type="number" id="userId" placeholder="Inserisci ID utente">
+            <button onclick="getUserDetails()">Visualizza</button>
+            <div class="results" id="userDetailsResults"></div>
+        </div>
+
+        <!-- Form per cercare utenti tramite query -->
+        <div class="form-section">
+            <label for="userQuery">Cerca utenti tramite query:</label>
+            <input type="text" id="userQuery" placeholder="Inserisci query per cercare utenti">
+            <button onclick="searchUsers()">Cerca</button>
+            <div class="results" id="userSearchResults"></div>
+        </div>
+
+        <!-- Form per visualizzare i dettagli di una specifica asta -->
+        <div class="form-section">
+            <label for="auctionId">Visualizza dettagli asta (ID):</label>
+            <input type="number" id="auctionId" placeholder="Inserisci ID asta">
+            <button onclick="getAuctionDetails()">Visualizza</button>
+            <div class="results" id="auctionDetailsResults"></div>
+        </div>
+
+        <!-- Form per cercare aste tramite query -->
+        <div class="form-section">
+            <label for="auctionQuery">Cerca aste tramite query:</label>
+            <input type="text" id="auctionQuery" placeholder="Inserisci query per cercare aste">
+            <button onclick="searchAuctions()">Cerca</button>
+            <div class="results" id="auctionSearchResults"></div>
+        </div>
+    </div>
+
+    <!-- Pop-up personalizzato -->
+    <div id="popup">
+        <p id="popupMessage"></p>
+        <button onclick="closePopup()">Chiudi</button>
+    </div>
+    <script src="/js/auctions.js"></script>
+</body>
+</html>

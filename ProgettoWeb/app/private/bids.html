@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Offerte</title>
+    <link rel="stylesheet" href="/css/bids.css">
+</head>
+<body>
+    <!-- Barra di navigazione -->
+    <div class="navbar">
+        <div class="logo">Gestione Offerte</div>
+        <div class="links">
+            <a href="auctions.html">Aste</a>
+            <a href="personal_area.html">Area personale</a>
+            <a href="login.html">Login/Registrati</a>
+        </div>
+    </div>
+
+    <h1>Gestione Offerte</h1>
+
+    <!-- Contenitore per i blocchi -->
+    <div class="sections-container">
+        <!-- Visualizzazione delle offerte per un'asta -->
+        <section>
+            <h2>Visualizza Offerte per un'Asta</h2>
+            <label for="auctionId">ID Asta:</label>
+            <input type="number" id="auctionId" />
+            <button onclick="getBidsForAuction()">Visualizza Offerte</button>
+            <div id="bidsList"></div>
+        </section>
+
+        <!-- Creazione di una nuova offerta -->
+        <section>
+            <h2>Crea una Nuova Offerta</h2>
+            <label for="auctionIdForBid">ID Asta:</label>
+            <input type="number" id="auctionIdForBid" />
+            <label for="bidAmount">Importo Offerta (€):</label>
+            <input type="number" id="bidAmount" />
+            <button onclick="createBid()">Crea Offerta</button>
+        </section>
+
+        <!-- Dettagli di un'offerta -->
+        <section>
+            <h2>Dettagli di un'Offerta</h2>
+            <label for="bidId">ID Offerta:</label>
+            <input type="number" id="bidId" />
+            <button onclick="getBidDetails()">Visualizza Dettagli</button>
+            <div id="bidDetails"></div>
+        </section>
+    </div>
+
+    <!-- Pop-up personalizzato -->
+    <div id="popup">
+        <p id="popupMessage"></p>
+        <button onclick="closePopup()">Chiudi</button>
+    </div>
+    <script src="/js/bids.js"></script>
+</body>
+</html>
